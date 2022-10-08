@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const todo_1 = require("../controller/todo");
+const router = (0, express_1.Router)();
+router.post("/", todo_1.createToDo);
+router.post("/", todo_1.getAllToDo);
+router.param("/:id", todo_1.getToDoById);
+router.put("/:id", todo_1.updateToDo);
+router.delete("/:id", todo_1.deleteToDo);
+exports.default = router;
